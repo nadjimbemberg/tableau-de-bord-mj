@@ -1,0 +1,162 @@
+:root {
+  --parchemin: #f3e5c0;
+  --parchemin-clair: #faf3df;
+  --encre: #3b2a1a;
+  --encre-douce: #6b5440;
+  --bordeaux: #7a2e1d;
+  --bordure: #c9a96e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--parchemin);
+  color: var(--encre);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.5;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+h1 {
+  color: var(--bordeaux);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+h2 {
+  color: var(--bordeaux);
+  font-size: 1.3rem;
+  margin: 24px 0 12px;
+}
+
+.sous-titre {
+  text-align: center;
+  color: var(--encre-douce);
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+/* Formulaires */
+.formulaire {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px;
+  background: var(--parchemin-clair);
+  border: 1px dashed var(--bordure);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.formulaire label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: var(--encre-douce);
+}
+
+.formulaire.connexion {
+  flex-direction: column;
+  align-items: stretch;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+input,
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  border: 1px solid var(--bordure);
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+input {
+  background: #fffdf6;
+  color: var(--encre);
+}
+
+button {
+  background: var(--bordeaux);
+  color: var(--parchemin-clair);
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+/* Messages */
+.erreur {
+  width: 100%;
+  background: #f8dcd7;
+  border: 1px solid #a3261a;
+  border-radius: 6px;
+  color: #a3261a;
+  font-weight: bold;
+  padding: 8px 12px;
+}
+
+.succes {
+  width: 100%;
+  color: #2f6b2a;
+  font-weight: bold;
+}
+
+.chargement {
+  text-align: center;
+  font-style: italic;
+  color: var(--encre-douce);
+  padding: 24px;
+}
+
+/* Barre du haut avec le bouton de déconnexion */
+.barre-session {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  color: var(--encre-douce);
+  font-style: italic;
+}
+
+/* Grille de cartes des PNJ */
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.carte {
+  background: var(--parchemin-clair);
+  border: 1px solid var(--bordure);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.carte h3 {
+  color: var(--bordeaux);
+}
+
+.carte .statut {
+  font-style: italic;
+  color: var(--encre-douce);
+}
+
+.carte.mort {
+  opacity: 0.55;
+  filter: grayscale(1);
+}
